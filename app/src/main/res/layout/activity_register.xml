@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="@color/white"
+    tools:context=".Register">
+
+    <TextView
+        android:layout_alignParentTop="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="9pt"
+        android:textColor="@color/black"
+        android:layout_centerHorizontal="true"
+        android:text="Вход"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <RelativeLayout
+            android:id="@+id/rl_fName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/et_fName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_container"
+                android:hint="Имя"
+                android:inputType="text"
+                android:maxLength="15"
+                android:singleLine="false"
+                android:padding="15dp" />
+
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/iv_cr_fName"
+                android:layout_marginEnd="15dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_width="15dp"
+                android:src="@drawable/cross"
+                android:layout_height="15dp"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rl_lName"
+            android:layout_below="@id/rl_fName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/et_lName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:background="@drawable/custom_container"
+            android:hint="Фамилия"
+            android:inputType="text"
+            android:singleLine="false"
+            android:padding="15dp" />
+
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/iv_cr_lName"
+                android:layout_marginEnd="15dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_width="15dp"
+                android:src="@drawable/cross"
+                android:layout_height="15dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_phone"
+            android:layout_below="@id/rl_lName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.santalu.maskara.widget.MaskEditText
+                android:id="@+id/et_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_container"
+                android:hint="Номер телефона"
+                android:maxLength="16"
+                android:inputType="number"
+                app:mask="+7 ###-###-##-##"
+                android:padding="15dp" />
+
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/iv_cr_phone"
+                android:layout_marginEnd="15dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_width="15dp"
+                android:src="@drawable/cross"
+                android:layout_height="15dp"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/bt_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_phone"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/custom_container"
+            android:backgroundTint="@color/light_pink"
+            android:padding="15dp"
+            android:text="Войти"
+            android:textAlignment="center"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/tv_bottom1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tv_bottom2"
+        android:textSize="5pt"
+        android:textColor="@color/grey"
+        android:layout_centerHorizontal="true"
+        android:text="Нажимая кнопку “Войти”, Вы принимаете"/>
+    <TextView
+        android:id="@+id/tv_bottom2"
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:textSize="5pt"
+        android:textColor="@color/grey"
+        android:layout_centerHorizontal="true"
+        android:text="@string/underline_text"/>
+</RelativeLayout>
