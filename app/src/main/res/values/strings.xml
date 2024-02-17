@@ -1,4 +1,19 @@
 <resources>
     <string name="app_name">testShop</string>
-    <string name="underline_text"><u>условия программы лояльности</u></string>
+    
+    // Register
+    <string name="underline_text">Нажимая кнопку “Войти”, Вы принимаете\n<u>условия программы лояльности</u></string>
+    <string name="fName">Имя</string>
+    <string name="lName">Фамилия</string>
+    <string name="phone">Номер телефона</string>
+    <string name="entry">Вход</string>
+    <string name="login">Войти</string>
+    
+    // MainPage
+    <string name="main">Главная</string>
+    <string name="catalogue">Каталог</string>
+    <string name="cart">Корзина</string>
+    <string name="promos">Акции</string>
+    <string name="profile">Профиль</string>
+    
 </resources>

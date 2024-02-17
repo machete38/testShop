@@ -1,5 +1,6 @@
 package com.machete3845.testShop
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -9,6 +10,8 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.machete3845.data.InternalDB
+import com.machete3845.data.UserData
 
 class Register : AppCompatActivity() {
 
@@ -97,10 +100,16 @@ class Register : AppCompatActivity() {
         if (et_fName.text.isNotEmpty() && et_lName.text.isNotEmpty() && isCyrillic(et_fName.text.toString()) && isCyrillic(et_lName.text.toString()) && et_phone.text.length == 16)
         {
             btn.background.setTint(getColor(R.color.pink))
+            btn.setOnClickListener {
+                InternalDB.saveUserData(this, UserData(et_fName.text.toString(),et_lName.text.toString(), et_phone.text.toString()))
+                val i = Intent(this, MainPage::class.java)
+                startActivity(i)
+            }
         }
         else
         {
             btn.background.setTint(getColor(R.color.light_pink))
+            btn.setOnClickListener {  }
         }
     }
 
@@ -114,7 +123,7 @@ class Register : AppCompatActivity() {
             }
             else
             {
-                et_phone.setHint("Номер телефона")
+                et_phone.setHint(getString(R.string.phone))
                 if (et_phone.text.length != 16)
                 {
                     et_phone.setBackgroundResource(R.drawable.custom_edittexterror)

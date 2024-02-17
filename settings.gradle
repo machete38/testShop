@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "testShop"
 include ':app'
+include ':data'
